@@ -1,8 +1,162 @@
-<html>
-  <head>
-    <title>JENKINS</title>
-  </head>
-  <body>
-    <h1>WELCOME TO CSE C OF KEC</h1>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Glow Beauty Studio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-color: #fff5f8;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            padding: 60px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        section {
+            padding: 60px 10%;
+        }
+
+        .about {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .about img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 15px;
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #e75480;
+        }
+
+        .services {
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: 2.2rem;
+            color: #e75480;
+            margin-bottom: 40px;
+        }
+
+        .service-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            margin: 15px 0 10px;
+            color: #e75480;
+        }
+
+        .card p {
+            padding: 0 15px 20px;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            background-color: #e75480;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Glow Beauty Studio</h1>
+    <p>Enhancing your natural beauty with love & care</p>
+</header>
+
+<section class="about">
+    <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9" alt="Beauty Care">
+    <div class="about-text">
+        <h2>About Us</h2>
+        <p>
+            At Glow Beauty Studio, we believe beauty begins with confidence.
+            Our professional team offers premium skincare, makeup, and hair
+            services designed to bring out your inner glow.
+        </p>
+    </div>
+</section>
+
+<section class="services">
+    <h2>Our Beauty Services</h2>
+    <div class="service-cards">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15" alt="Makeup">
+            <h3>Professional Makeup</h3>
+            <p>Flawless makeup for weddings, parties, and special occasions.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1559599101-f09722fb4948" alt="Skincare">
+            <h3>Skincare Treatments</h3>
+            <p>Rejuvenating facials and skincare therapies for radiant skin.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66" alt="Hair Styling">
+            <h3>Hair Styling</h3>
+            <p>Trendy haircuts, styling, and spa treatments by experts.</p>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Glow Beauty Studio | Feel Beautiful Every Day</p>
+</footer>
+
+</body>
 </html>
