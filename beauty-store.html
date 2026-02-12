@@ -11,7 +11,7 @@
 body{
     margin:0;
     font-family:'Poppins',sans-serif;
-    background:linear-gradient(135deg,#ff9a9e,#fad0c4,#fad0c4);
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
 }
 
 /* HEADER */
@@ -19,7 +19,7 @@ header{
     background:white;
     padding:20px;
     text-align:center;
-    font-size:30px;
+    font-size:32px;
     font-weight:600;
     color:#e91e63;
     box-shadow:0 4px 15px rgba(0,0,0,0.1);
@@ -31,6 +31,8 @@ header{
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:25px;
     padding:40px;
+    max-height:80vh;
+    overflow-y:auto;
 }
 
 .card{
@@ -61,6 +63,14 @@ header{
     font-size:18px;
 }
 
+input{
+    width:60px;
+    padding:5px;
+    border-radius:10px;
+    border:1px solid #ddd;
+    text-align:center;
+}
+
 button{
     background:linear-gradient(45deg,#e91e63,#ff4081);
     border:none;
@@ -72,7 +82,6 @@ button{
     margin-top:10px;
     transition:0.3s;
 }
-
 button:hover{
     transform:scale(1.05);
 }
@@ -98,10 +107,6 @@ button:hover{
 .cart-item{
     border-bottom:1px solid #eee;
     padding:10px 0;
-}
-
-.cart-item p{
-    margin:4px 0;
 }
 
 .remove-btn{
@@ -146,49 +151,42 @@ button:hover{
 
 <div class="products">
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30">
-<div class="card-content">
-<h3>Matte Lipstick</h3>
-<p class="price">₹499</p>
-<input type="number" id="qty1" value="1" min="1" style="width:60px;">
-<br>
-<button onclick="addToCart('Matte Lipstick',499,'qty1')">Add to Cart</button>
-</div>
-</div>
+<!-- 15 PRODUCTS -->
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa">
-<div class="card-content">
-<h3>Luxury Foundation</h3>
-<p class="price">₹899</p>
-<input type="number" id="qty2" value="1" min="1" style="width:60px;">
-<br>
-<button onclick="addToCart('Luxury Foundation',899,'qty2')">Add to Cart</button>
-</div>
-</div>
+<script>
+const products = [
+["Matte Lipstick",499,"https://static.beautytocare.com/cdn-cgi/image/width=1600,height=1600,f=auto/media/catalog/product//m/-/m-a-c-cosmetics-m-a-cximal-matte-lipstick-665-ring-the-alarm-3-5g.jpg"],
+["Liquid Lipstick",599,"https://parulgargbeauty.com/cdn/shop/files/Romance45_1_3.jpg?v=1748419979&width=2048"],
+["Luxury Foundation",899,"https://images-cdn.ubuy.co.in/6809132bb49ee302cb05b3c1-maybelline-fit-me-matte-poreless.jpg"],
+["Compact Powder",399,"https://img.thecdn.in/365412/mars-matte-on-compact-powder-02-beige-8g-applicato-1735996758107_SKU-10637_0.jpg?width=600&format=webp"],
+["Blush Kit",599,"https://fashioncolour.in/cdn/shop/files/B02_Shade_01.jpg?v=1728972545"],
+["Eye Shadow Palette",699,"https://m.media-amazon.com/images/I/51glpMxqPiL._AC_UF1000,1000_QL80_.jpg"],
+["Eyeliner",299,"https://juicecosmetics.in/cdn/shop/files/SE-EYELINER.jpg?v=1745927169"],
+["Mascara",349,"https://m.media-amazon.com/images/I/61vuiK6d7RL.jpg"],
+["Highlighter",649,"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAR_NuSl5twngL8SRk-lN1QTHOiQJ4-LW2OQ&s"],
+["Makeup Brush Set",799,"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJtK-eAKd6DWMRo3JtIh4-eHDVOrduELlUhw&s"],
+["Beauty Blender",199,"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSic2XwY9wNzbrZ_2E6t7In8tfVy-Y0FrK8mw&s"],
+["Primer",549,"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxIPZHuA2kwFTe5ndV56LzTXHaDqUa7J-HNw&s"],
+["Setting Spray",499,"https://images-static.nykaa.com/media/catalog/product/1/e/1ed1210NYSWISSB00122_x11.jpg?tr=w-500"],
+["Nail Polish Set",399,"https://www.ogbeauty.in/cdn/shop/files/12..jpg?v=1735997067"],
+["Makeup Remover",299,"https://shopaarel.com/cdn/shop/files/MakeupRemoverProduct_USP.jpg?v=1736341802&width=1024"]
+];
 
+products.forEach((p,i)=>{
+document.write(`
 <div class="card">
-<img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad">
+<img src="${p[2]}">
 <div class="card-content">
-<h3>Eye Shadow Palette</h3>
-<p class="price">₹699</p>
-<input type="number" id="qty3" value="1" min="1" style="width:60px;">
+<h3>${p[0]}</h3>
+<p class="price">₹${p[1]}</p>
+<input type="number" id="qty${i}" value="1" min="1">
 <br>
-<button onclick="addToCart('Eye Shadow Palette',699,'qty3')">Add to Cart</button>
+<button onclick="addToCart('${p[0]}',${p[1]},'qty${i}')">Add to Cart</button>
 </div>
 </div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1603575448360-153f093fd0b3">
-<div class="card-content">
-<h3>Blush Kit</h3>
-<p class="price">₹599</p>
-<input type="number" id="qty4" value="1" min="1" style="width:60px;">
-<br>
-<button onclick="addToCart('Blush Kit',599,'qty4')">Add to Cart</button>
-</div>
-</div>
+`);
+});
+</script>
 
 </div>
 
